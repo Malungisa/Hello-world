@@ -1,37 +1,31 @@
-## Welcome to GitHub Pages
+# TEAM PROJECTS
 
-You can use the [editor on GitHub](https://github.com/Malungisa/Hello-world/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+## 1. Predicting Overall Rating of Fifa 19 Players
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+●	Collaborated with two group members to make a multiple regression model in R, and use statistical tools for analysis.
 
-### Markdown
+●	Applied the method of removing least significant predictors using p-values
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+●	Utilized stepwise regression
 
-```markdown
-Syntax highlighted code block
+●	Produced results documenting the most significant predictors for a player's overall rating
 
-# Header 1
-## Header 2
-### Header 3
+## 2. IMDB Movies Reviews Analysis
 
-- Bulleted
-- List
+●	Partnered with a class member to analyze a kaggle dataset about IMDB movie reviews
 
-1. Numbered
-2. List
+●	Utilized data visualization with python using tools like pandas in Watson Studio.
 
-**Bold** and _Italic_ and `Code` text
+●	Incorporated model building using; simple and multiple regression and clustering using KNN
 
-[Link](url) and ![Image](src)
-```
+●	Communicated results to other students and professors through a formal presentation
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## 3. Simulating Transmission of COVID-19
 
-### Jekyll Themes
+●	Worked with a partner to simulate and compare effects of reducing number of contacts to reducing the strength of contacts, to the spread of COVID-19
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Malungisa/Hello-world/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+●	Simulating transmission of the infectious disease on Networks was done with Net Logo on IONTW1.1
 
-### Support or Contact
+●	Presented findings and answer questions about the project.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
