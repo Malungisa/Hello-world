@@ -4,6 +4,8 @@ I am a student at luther Collge with a major in data science and minor in mathem
 Reasons for this website:
 - To share projects that I have worked on and currently working on.
 
+![Mndzebele Malungisa2](https://user-images.githubusercontent.com/73528630/103179329-75733480-4850-11eb-9efb-58472a077bcf.JPG)
+
 
 ## EDUCATION
 Bachelor of Arts, Luther College, Decorah, IA (August 2017-May 2021)
