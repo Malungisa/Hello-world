@@ -19,9 +19,7 @@ Bachelor of Arts, Luther College, Decorah, IA (August 2017-May 2021)
 
 -Operating Systems: Windows XP/7/8/10, Mac OS, Linux, Android
 
--Database: PostgreSql
-
--Tools: MS Excel, Pandas, Scikit learn, matlib
+-Tools: MS Excel, Pandas, Scikit learn, matlib, Tableau, Anaconda, Rstudio, MySQL, Tensorflow, IBM Watson Studio.
 
 ## HONORS
 
