@@ -1,5 +1,5 @@
 # About Malungisa
-I am a luther Collge graduate with a major in data science and minor in mathematics. I enjoy working on data science projects and anything related to data cleaning, visualization and analysis. I have experience working on excel, python and R but am also interested in learning new and using new tools and languages.
+I am a luther Colloge graduate with a major in data science and minor in mathematics. I enjoy working on data science projects and anything related to data cleaning, visualization and analysis. I have experience working on excel, python and R but am also interested in learning new and using new tools and languages.
 
 Reasons for this website:
 - To share projects that I have worked on and currently working on.
