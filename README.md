@@ -106,7 +106,7 @@ Below is a link to project files.
 
 ●	
 
-[GlobalSuper store Poster](https://github.com/Malungisa/Hello-world/blob/f9037d8a507d982f4e99132418bd7f43d7614ef3/DS420%20Final%20Poster.pdf)
+[GlobalSuper store Poster](https://github.com/Malungisa/Hello-world/blob/f51a9cfa734a3aa54a4478a8e6de736a10f78d5a/Poster.pptx.pdf)
 
 [GlobalSuper store data exploration and analysis](https://drive.google.com/file/d/1MXrYiIVUPoSbtH3ZV98L1FJkW4GfBrsm/view?usp=sharing)
 
