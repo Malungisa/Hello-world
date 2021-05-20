@@ -53,7 +53,21 @@ Bachelor of Arts, Luther College, Decorah, IA (August 2017-May 2021)
 
 ●	Communicated results to other students and professors through a formal presentation
 
-## 3. Simulating Transmission of COVID-19
+## 3. Classification of Five different hand postures
+
+●	The problem that we attempted to tackle was accurately classifying hand posture positions based on a series of coordinates. 
+
+●	The use of machine learning to determine hand posture can have a number of real world applications, including sign language recognition.
+
+●	We used SGD classifier and descision tree machine learning algorithms to make predictive models. PCA was applied to reduce number of components.
+
+●	The descision tree produced the best model accuracy with a score od 96%.
+
+●	Models ran after PCA reduction had better performance overall.
+
+●	The OvO models performed the best when using the SGD Classifier compared to OvA models. 
+
+## 4. Simulating Transmission of COVID-19
 
 ●	Worked with a partner to simulate and compare effects of reducing number of contacts to reducing the strength of contacts, to the spread of COVID-19
 
