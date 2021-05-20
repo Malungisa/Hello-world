@@ -1,5 +1,5 @@
 # About Malungisa
-I am a student at luther Collge with a major in data science and minor in mathematics. I enjoy working on data science projects and anything related to data analysis. I enjoy working on python and R but am also interested in learning new and using new tools.
+I am a luther Collge graduate with a major in data science and minor in mathematics. I enjoy working on data science projects and anything related to data cleaning, visualization and analysis. I have experience working on excel, python and R but am also interested in learning new and using new tools and languages.
 
 Reasons for this website:
 - To share projects that I have worked on and currently working on.
@@ -55,6 +55,8 @@ Bachelor of Arts, Luther College, Decorah, IA (August 2017-May 2021)
 
 ## 3. Classification of Five different hand postures
 
+●	Partnered with a two class members to analyze a UCI Machine Learning dataset about Hand Posture Classification. 
+
 ●	The problem that we attempted to tackle was accurately classifying hand posture positions based on a series of coordinates. 
 
 ●	The use of machine learning to determine hand posture can have a number of real world applications, including sign language recognition.
@@ -66,6 +68,11 @@ Bachelor of Arts, Luther College, Decorah, IA (August 2017-May 2021)
 ●	Models ran after PCA reduction had better performance overall.
 
 ●	The OvO models performed the best when using the SGD Classifier compared to OvA models. 
+
+Below is a link to project files.
+https://github.com/Malungisa/Hello-world/blob/8617efadf7434b2fba3d325434d8bf0d5043779a/DS420%20Poster.pdf
+
+https://github.com/Malungisa/Hello-world/blob/095eb417d283334efa19de4ebf8dc0d442e0a32d/Midterm.ipynb
 
 ## 4. Simulating Transmission of COVID-19
 
