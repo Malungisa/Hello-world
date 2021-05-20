@@ -70,11 +70,29 @@ Bachelor of Arts, Luther College, Decorah, IA (August 2017-May 2021)
 ●	The OvO models performed the best when using the SGD Classifier compared to OvA models. 
 
 Below is a link to project files.
+
 https://github.com/Malungisa/Hello-world/blob/8617efadf7434b2fba3d325434d8bf0d5043779a/DS420%20Poster.pdf
 
 https://github.com/Malungisa/Hello-world/blob/095eb417d283334efa19de4ebf8dc0d442e0a32d/Midterm.ipynb
 
-## 4. Simulating Transmission of COVID-19
+## 6. Fruit Recognition
+
+●	The problem that we attempted to tackle was accurately recognizing fruits based on images, which were taken over a 6 month period. To solve this problem we used a Convolutional Neural Network model. We also created a classical machine learning model for comparison of results
+
+● The data used for this analysis contained 44,406 images with 15 different fruit labels. images were taken with different poses, number of fruit, same color but different fruit, different color - same category, and different lighting conditions. We also reduced the amount of images by randomly removing images from each category.
+
+● The deep learning model (CNN) 98% performed better than the classical machine learning model (SGD classifier) 77%.
+
+● Little difference in accuracy between color and grayscale.
+
+Below is a link to project files.
+
+https://github.com/Malungisa/Hello-world/blob/f9037d8a507d982f4e99132418bd7f43d7614ef3/DS420%20Final%20Poster.pdf
+
+https://github.com/Malungisa/Hello-world/blob/f9037d8a507d982f4e99132418bd7f43d7614ef3/fruitRecognitionColor.ipynb
+
+
+## 5. Simulating Transmission of COVID-19
 
 ●	Worked with a partner to simulate and compare effects of reducing number of contacts to reducing the strength of contacts, to the spread of COVID-19
 
