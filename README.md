@@ -98,12 +98,21 @@ Below is a link to project files.
 
 [Fruit Recognition notebook](https://github.com/Malungisa/Hello-world/blob/f9037d8a507d982f4e99132418bd7f43d7614ef3/fruitRecognitionColor.ipynb)
 
-## 5. Simulating Transmission of COVID-19
+## 5. GlobalSuper Store Data Exploration and Analysis for Recommender System
 
-●	Worked with a partner to simulate and compare effects of reducing number of contacts to reducing the strength of contacts, to the spread of COVID-19
+●	
 
-●	Simulating transmission of the infectious disease on Networks was done with Net Logo on IONTW1.1
+●	
 
-●	Presented findings and answer questions about the project.
+●	
 
+[GlobalSuper store Poster](https://github.com/Malungisa/Hello-world/blob/f9037d8a507d982f4e99132418bd7f43d7614ef3/DS420%20Final%20Poster.pdf)
+
+[GlobalSuper store data exploration and analysis](https://drive.google.com/file/d/1MXrYiIVUPoSbtH3ZV98L1FJkW4GfBrsm/view?usp=sharing)
+
+[GlobalSuper store model building](https://github.com/Malungisa/Hello-world/blob/4251c0cb94d853a387741a9aff28597d5da4a279/Model%20Building.ipynb)
+
+[GlobalSuper store Tableau](https://github.com/Malungisa/Hello-world/blob/cb55066ca114ccaf9ce4fea46fb14f935bdf4e77/Tableau-Dashboard%20workbook.twb)
+
+[GlobalSuper store Rmd](https://github.com/Malungisa/Hello-world/blob/17346c6fe09af304687a286084d2f6de28c59f65/R_Shinny.Rmd)
 
