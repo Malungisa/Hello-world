@@ -1,0 +1,451 @@
+
+---
+title: "Predicting Overall Rating of  Fifa 19 Players"
+author: "Nkosi,Malu,Teddy"
+date: "November 14, 2019"
+output:
+  pdf_document:
+    toc: yes
+  word_document:
+    toc: yes
+---
+# Abstract
+The dataset used in this model came from the game FIFA 19. It contained various atttributes about each player and their information stored within the game. The problem at hand was to see if the linear regression model could be used to predict a player's overall rating in the game.  The attributes chosen were all continous variables which we thought were crucial in determining a player's rating within the game. The model found that certain predictors and not all were very significant in predicting a player's Overall Rating. Absence of one variable did not affect other predictors as much because some variables were already significant. 
+
+# Introduction
+This dataset is from Kaggle.com under a dataset called FIFA 19 complete player dataset. It has 18207 players and so a random sample was done to get a sample of players. The random sample produced 99 players for each position i.e Striker, Midfielder and Defender. Therefore the model then used 297 players total.The predictor variables were:
+
++ Aggression
++ Jumping
++ FKAccuracy
++ Strenth
++ Curve
++ Stamina
++ SprintSpeed
++ Volleys
++ Dribbling
++ Finishing
++ Agility
++ LongPassing
++ Interceptions
++ Penalties
++ Longshots
++ Crossing
++ Positioning
++ Balance
++ StandingTackle
++ SlidingTackle
++ ShotPower
++ HeadingAccuracy
++ ShortPassing
++ BallControl
++ Acceleration
++ Reactions
++ Vision
++ Composure
++ Marking
+
+The response variable was overall rating. We were interested in determining which variables can best predict the overall rating of each player regardless of the position. 
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Reading in the data
+library(readxl)
+latestfifa19 <- read_excel("latestfifa19.xls")
+```
+
+#Exploratory Analysis
+#Check distributions of the predictor variables
+```{r}
+library (tidyr)
+library (ggplot2)
+ggplot(gather(latestfifa19), aes(value)) + 
+  geom_histogram(bins = 8) + 
+  facet_wrap(~key, scales = 'free_x')
+```
+
+ShotPower seems to be left-skewed. All the other predictors look to have reasonable normal distributions. A quadratic transformation may need to be done on the ShotPower predictor variable. 
+
+#Pairwise correlations
+
+```{r fig.height=25, fig.width=25}
+plot(latestfifa19)
+```
+```{r}
+cormat = cor (latestfifa19 [,1:30], use = "complete.obs")
+round (cormat, 2)
+library(corrplot)
+corrplot(cormat, method="ellipse")
+```
+
+
+Overall rating is mostly correlated with ShortPassing, Dribbling, BallControl, Reactions and Composure.
+
+
+# Model 1
+```{r}
+#Fit a first order model with all predictors
+fit1 = lm (Overall ~ Crossing + Finishing + HeadingAccuracy + ShortPassing + Volleys + Dribbling + Curve + FKAccuracy + LongPassing + BallControl + Acceleration + SprintSpeed + Agility + Reactions + Balance + ShotPower + Jumping + Stamina + Strength + LongShots + Aggression + Interceptions + Positioning + Vision + Penalties + Composure + Marking + StandingTackle + SlidingTackle , data=latestfifa19)
+summary (fit1)
+```
+
+Using all the predictor variables, the model explains 88.2% of the variation in the overall rating which is the Adjusted R^2 because it is a multiple linear regression.The residual standard error is 2.29 which is relatively small given that the range is 50-80. The most significant predictors are HeadingAccuracy, ShortPassing, BallControl, Reactions, Vision and Composure.  
+
+#Residual Analysis - First Order Model
+
+```{r}
+par (mfrow=c(1,2))
+plot(fit1)
+```
+
+#Residual vs Fitted plot
+There is “horizontal band” around the line the 0 line.This suggest that the variances of the error terms are equal.
+
+#Normal Q-Q plot:
+
+The normal Q-Q plot is lightly tailed.This suggests that the data is approximately normal. Therefore the residuals are normal
+
+#Scale-location:
+
+Residuals are spread equally along the ranges of predictors.This is how you can check the assumption of equal variance (homoscedasticity). Its good if horizontal line with equally spread points, here residuals appear randomly spread.
+
+#Residuals vs Leverage:
+
+This plot helps us to find influential case, if any. Not all outliers are influential in linear regression analysis. In this case when there is no influential case or cases. You can barely see Cook’s distance lines because all cases are well inside of the Cook’s distance lines.
+
+```{r}
+#Do a Box-Cox analysis to see if the response variable should be transformed 
+MASS::boxcox (fit1)
+```
+
+In the Box-Cox Plot above, the two vertical dotted lines gives the Upper Limit and Lower Limit for the values for the fit of the log(Overall) vs all predictor variables in the data set for which the Box-Cox plot is plotted. It is clear from the observation that these 2 limits, which make up the 95% Confidence Interval for the given model, do contain '1'. Hence, it implies the statistical tests for which normality approximations needed can be used over this data. Thus, the presence of =1 within the 95% confidence interval in the given plot implies that a transformation of the data is not needed so that the statistical tests conforming to normality approximation can be useful for the inference of the data.
+
+# Model 2 - Remove non-significant predictors
+#For this model, we removed all the non significant predictor variables. 
+
+```{r}
+#Fit a first order model with Agression variable removed 
+fit2 = lm (Overall ~ Crossing + Finishing + HeadingAccuracy + ShortPassing + Volleys + Dribbling + Curve + FKAccuracy + LongPassing + BallControl + Acceleration + SprintSpeed + Agility + Reactions + Balance + ShotPower + Jumping + Stamina + Strength + LongShots + Interceptions + Positioning + Vision + Penalties + Composure + Marking + StandingTackle + SlidingTackle , data=latestfifa19)
+summary (fit2)
+```
+
+```{r}
+#Fit a first order model with Jumping variable removed  
+fit3 = lm (Overall ~ Crossing + Finishing + HeadingAccuracy + ShortPassing + Volleys + Dribbling + Curve + FKAccuracy + LongPassing + BallControl + Acceleration + SprintSpeed + Agility + Reactions + Balance + ShotPower + Stamina + Strength + LongShots + Interceptions + Positioning + Vision + Penalties + Composure + Marking + StandingTackle + SlidingTackle , data=latestfifa19)
+summary (fit3)
+```
+
+```{r}
+#Fit a first order model with FKAccuracy variable removed
+fit4 = lm (Overall ~ Crossing + Finishing + HeadingAccuracy + ShortPassing + Volleys + Dribbling + Curve + LongPassing + BallControl + Acceleration + SprintSpeed + Agility + Reactions + Balance + ShotPower + Stamina + Strength + LongShots + Interceptions + Positioning + Vision + Penalties + Composure + Marking + StandingTackle + SlidingTackle , data=latestfifa19)
+summary (fit4)
+```
+
+
+```{r}
+#Fit a first order model with Strength variable removed
+fit5 = lm (Overall ~ Crossing + Finishing + HeadingAccuracy + ShortPassing + Volleys + Dribbling + Curve + LongPassing + BallControl + Acceleration + SprintSpeed + Agility + Reactions + Balance + ShotPower + Stamina + LongShots + Interceptions + Positioning + Vision + Penalties + Composure + Marking + StandingTackle + SlidingTackle , data=latestfifa19)
+summary (fit5)
+```
+
+
+```{r}
+#Fit a first order model with Curve variable removed 
+fit6 = lm (Overall ~ Crossing + Finishing + HeadingAccuracy + ShortPassing + Volleys + Dribbling + LongPassing + BallControl + Acceleration + SprintSpeed + Agility + Reactions + Balance + ShotPower + Stamina + LongShots + Interceptions + Positioning + Vision + Penalties + Composure + Marking + StandingTackle + SlidingTackle , data=latestfifa19)
+summary (fit6)
+```
+
+```{r}
+#Fit a first order model with Stamina variable removed 
+fit7 = lm (Overall ~ Crossing + Finishing + HeadingAccuracy + ShortPassing + Volleys + Dribbling + LongPassing + BallControl + Acceleration + SprintSpeed + Agility + Reactions + Balance + ShotPower + LongShots + Interceptions + Positioning + Vision + Penalties + Composure + Marking + StandingTackle + SlidingTackle , data=latestfifa19)
+summary (fit7)
+```
+
+```{r}
+#Fit a first order model with SprintSpeed variable removed
+fit8 = lm (Overall ~ Crossing + Finishing + HeadingAccuracy + ShortPassing + Volleys + Dribbling + LongPassing + BallControl + Acceleration + Agility + Reactions + Balance + ShotPower + LongShots + Interceptions + Positioning + Vision + Penalties + Composure + Marking + StandingTackle + SlidingTackle , data=latestfifa19)
+summary (fit8)
+```
+
+```{r}
+#Fit a first order model with Volleys variable removed
+fit9 = lm (Overall ~ Crossing + Finishing + HeadingAccuracy + ShortPassing + Dribbling + LongPassing + BallControl + Acceleration + Agility + Reactions + Balance + ShotPower + LongShots + Interceptions + Positioning + Vision + Penalties + Composure + Marking + StandingTackle + SlidingTackle , data=latestfifa19)
+summary (fit9)
+```
+
+```{r}
+#Fit a first order model with Dribbling variable removed
+fit10 = lm (Overall ~ Crossing + Finishing + HeadingAccuracy + ShortPassing + LongPassing + BallControl + Acceleration + Agility + Reactions + Balance + ShotPower + LongShots + Interceptions + Positioning + Vision + Penalties + Composure + Marking + StandingTackle + SlidingTackle , data=latestfifa19)
+summary (fit10)
+```
+
+```{r}
+#Fit a first order model with Finishing variable removed 
+fit11 = lm (Overall ~ Crossing + HeadingAccuracy + ShortPassing + LongPassing + BallControl + Acceleration + Agility + Reactions + Balance + ShotPower + LongShots + Interceptions + Positioning + Vision + Penalties + Composure + Marking + StandingTackle + SlidingTackle , data=latestfifa19)
+summary (fit11)
+```
+
+```{r}
+#Fit a first order model with Agility variable removed 
+fit12 = lm (Overall ~ Crossing + HeadingAccuracy + ShortPassing + LongPassing + BallControl + Acceleration + Reactions + Balance + ShotPower + LongShots + Interceptions + Positioning + Vision + Penalties + Composure + Marking + StandingTackle + SlidingTackle , data=latestfifa19)
+summary (fit12)
+```
+
+
+After using the manual backward elimination method, most of our predictors were significant at p<0.05. Although, some of the predictors did have a p-value greater than 0.05. Since, the Adjusted R^2 value started decreasing after removing the Agility variable, the predictor variables left were the ones to be used in the model. Those predictor variables were LongPassing, Interceptions, Penalties, LongShots, Crossing, Positioning, Balance, StandingTackle, SlidingTackle, ShotPower, HeadingAccuracy, ShortPassing, BallControl, Acceleration, Reactions, Vision, Composure, Marking. A residual analysis would be appropriate for the model before interpreting the parameters. 
+
+# Model 3 Residual Analysis
+
+```{r}
+par (mfrow=c(1,2))
+plot(fit12)
+```
+
+# Interpretations for these graphs
+
+#The residuals vs fitted residuals:
+There is “horizontal band” around the line the 0 line.This suggest that the variances of the error terms are equal.
+
+#Normal Q-Q plot:
+The normal Q-Q plot is lightly tailed or it follows a straight line.This suggests that the data is approximately normal. Therefore the residuals are normal
+
+#Scale-location graph:
+
+Residuals are spread equally along the ranges of predictors.This is how you can check the assumption of equal variance (homoscedasticity). Its good if horizontal line with equally spread points, here residuals appear randomly spread.
+
+#Residuals vs Leverage:
+
+This plot helps us to find influential case, if any. Not all outliers are influential in linear regression analysis. In this case when there is no influential case or cases. You can barely see Cook’s distance lines because all cases are well inside of the Cook’s distance lines.
+
+Earlier it was noted that ShotPower was right-skewed, it is important that a log transformation be done and then refit the model. 
+
+```{r}
+#Refit the model with a quadratic of ShotPower
+latestfifa19$ShotPower.c = latestfifa19$ShotPower - mean (latestfifa19$ShotPower)
+latestfifa19$ShotPowersq = latestfifa19$ShotPower.c^2
+fit13 = lm (Overall ~ Crossing + HeadingAccuracy + ShortPassing + LongPassing + BallControl + Acceleration + Reactions + Balance + ShotPowersq + LongShots + Interceptions + Positioning + Vision + Penalties + Composure + Marking + StandingTackle + SlidingTackle , data=latestfifa19)
+summary (fit13)
+```
+
+The quadratic transformation of ShotPower made Crossing, ShotPower, LongShort, Positioning less significant in the model. However, it did make the Penalties and Balance variables significant. So the best model was the original fit12 without the quadratic transformation of any predictor variable which is presented below. The new model will now be called fit14.
+
+```{r}
+#Final model 
+fit14 = lm (Overall ~ Crossing + HeadingAccuracy + ShortPassing + LongPassing + BallControl + Acceleration + Reactions + Balance + ShotPower + LongShots + Interceptions + Positioning + Vision + Penalties + Composure + Marking + StandingTackle + SlidingTackle , data=latestfifa19)
+summary (fit14)
+confint(fit14)
+```
+
+# Intepretations of Confidence Intervals 
+
+Average Overall increases 0.0300 per crossing, or between -0.00234 and 0.0613 per crossing with 95% confidence, holding other predictors held constant.
+
+Average Overall increases 0.0907 per Heading Accuracy, or between 0.0532 and 0.128 per HeadingAccuracy with 95% confidence, holding other predictors held constant.
+
+Average Overall increases 0.150 per ShortPassing , or between 0.0714 and 0.229 per ShortPassing with 95% confidence, holding other predictors held constant.
+
+Average Overall increases 0.182 per BallControl, or between 0.111 and 0.252 per BallControl with 95% confidence, holding other predictors held constant.
+
+Average Overall increases 0.0587 per Acceleration, or between 0.0273 and 0.0900 per Acceleration with 95% confidence, holding other predictors held constant.
+
+Average Overall increases 0.303 per Reactions, or between 0.244 and 0.0.362 per Reactions with 95% confidence, holding other predictors held constant.
+
+Average Overall increases 0.0570 per ShotPower, or between 0.163 and 0.0977 per ShotPower with 95% confidence, holding other predictors held constant.
+
+Average Overall decreases -0.0871 per Vision, or between -0.132 and -0.421 per Vision with 95% confidence, holding other predictors held constant.
+
+Average Overall increases 0.126 per Composure, or between 0.0779 and 0.175 per Composure with 95% confidence, holding other predictors held constant.
+
+Average Overall increases 0.0506 per Marking, or between 0.0192 and 0.0820 per Marking with 95% confidence, holding other predictors held constant.
+
+Average Overall decreases -0.0744 per SlidingTackle, or between -0.134 and -0.0151 per SlidingTackle with 95% confidence, holding other predictors held constant.
+
+# Stepwise Regression
+
+We then apply stepwise regression to the full model (fit1) with all predictors with the AIC criterion.
+
+```{r}
+fit1aic = step(fit1, direction="both")
+```
+
+Long Passing, Sprint Speed, Stamina, Finishing, Dribbling, Volleys, Agility, Curve, Strength, Jumping, FreeKick Accuracy and Aggression were the predictors variables removed from the model using the AIC method. Following this, we applied another method of stepwise regression using the SBC criterion. 
+
+```{r}
+# Get the sample size from the dim function
+n = dim(latestfifa19)[1]
+fit1sbc = step (fit1, direction = "both", k=log(n))
+```
+
+The SBC method removed all non-significant predictors and left ShotPower, Acceleration, Vision, BallControl, ShortPassing, Composure, Marking, HeadingAccuracy and Reactions in the model.
+
+# Interactions
+
+Next, we added all the possible two-way interaction effects to the stepwise regression model which is above using the SBC criterion.
+
+
+```{r}
+fit1sbc.int = lm (Overall ~ (ShotPower + Acceleration + Vision + BallControl + ShortPassing + Composure + Marking + HeadingAccuracy + Reactions)^2, data=latestfifa19)
+summary (fit1sbc.int)
+```
+
+This model presented here above has a much higher adjusted R^2 (0.94 vs 0.88) and a much lower residual standard error (1.616 vs 2.293).
+
+Therefore, we used the stepwise regression method to remove all the non-significant predictors. 
+
+```{r}
+fit1.int.sbc = step (fit1sbc.int, direction = "both", k=log(n))
+summary (fit1.int.sbc)
+```
+
+Eleven interaction effects were retained in the model by the SBC criterion; ShotPower vs Acceleration, ShotPower vs Marking, ShotPower vs HeadingAccuracy, Acceleration vs HeadingAccuracy, Vision vs HeadingAccuracy, BallControl vs ShortPassing, BallControl vs Marking, BallControl vs HeadingAccuracy, Composure vs Marking, Marking vs Reactions and HeadingAccuracy vs Reactions. 
+It indicates that the slope between Overall and Shot Power is different for different levels of Acceleration.It also indicates that the slope between Overall and Shot Power is different for different levels of Marking.It also indicates that the slope between Overall and Shot Power is different for different levels of HeadingAccuracy.It also indicates that the slope between Overall and Acceleration is different for different levels of HeadingAcccuracy.It also indicates that the slope between Overall and Vision is different for different levels of HeadingAccuracy.It  also indicates that the slope between Overall and BallControl is different for different levels of ShortPassing.It also indicates that the slope between Overall and BallControl is different for different levels of Marking.It also indicates that the slope between Overall and BallControl is different for different levels of HeadingAccuracy. It also indicates that the slope between Overall and Composure is different for different levels of Marking. It also indicates that the slope between Overall and Marking is different for different levels of Reactions. It also indicates that the slope between Overall and HeadingAccuracy is different for different levels of Reactions.
+
+# Final Model
+The model shown above looks to be the best final model.
+
+# Residual and Influence Analysis
+It is also important to view the residuals of this final model.
+
+```{r}
+par (mfrow = c(1,2))
+plot(fit1.int.sbc)
+```
+
+
+Looking at the four residual plots, they look perfectly fine for the model.
+
+```{r}
+boxplot (fit1.int.sbc$residuals, horizontal = T)
+```
+
+Residual plots boxplot seems relatively fine for the mdoel. A symmetric distribution is seen with no obvious outliers.
+
+Further analysis will involve diagnostics around the hat diagonals, DFFITS and variance inflation factors. 
+
+```{r}
+plot(hatvalues(fit1.int.sbc))
+```
+
+
+```{r}
+plot (dffits(fit1.int.sbc))
+```
+
+```{r}
+latestfifa19 [which (dffits (fit1.int.sbc) < -1),]
+```
+
+The hat values seem scattered around the same area which is perfectly fine. Moreover, the DFFITS values also look perfectly fine. 
+
+```{r}
+library("car")
+car::vif (fit1.int.sbc)
+```
+
+The VIF values appear to be very big for all the predictors and all the interaction effects. A way to improve the model could be to center ShotPower,Acceleration,Vision,BallControl,Composure,Marking and HeadingAccuracy variables. 
+
+```{r}
+latestfifa19$ShotPower.c = latestfifa19$ShotPower - mean(latestfifa19$ShotPower)
+latestfifa19$Acceleration.c = latestfifa19$Acceleration - mean(latestfifa19$Acceleration)
+latestfifa19$Vision.c = latestfifa19$Vision - mean(latestfifa19$Vision)
+latestfifa19$BallControl.c = latestfifa19$BallControl - mean(latestfifa19$BallControl)
+latestfifa19$Composure.c = latestfifa19$Composure - mean(latestfifa19$Composure)
+latestfifa19$Marking.c = latestfifa19$Marking - mean(latestfifa19$Marking)
+latestfifa19$HeadingAccuracy.c = latestfifa19$HeadingAccuracy - mean(latestfifa19$HeadingAccuracy)
+
+fit1.int.sbc2 = lm (Overall ~ ShotPower.c + Acceleration.c + Vision.c + BallControl.c + ShortPassing + Composure.c + Marking.c + HeadingAccuracy.c + Reactions, data=latestfifa19)
+car::vif(fit1.int.sbc2)
+summary (fit1.int.sbc2)
+```
+
+Centering the ShotPower,Acceleration,Vision,BallControl,Composure,Marking and HeadingAccuracy variables significantly dropped the big VIF factors as seen in the prior model. These values were more appropriate because the model would work best with VIF factors around 5 or less.
+
+# Interaction plots 
+
+Following this, we decided to plot the interaction effects of the model.
+
+```{r}
+par (mfrow=c(1,1))
+# Function to categorize a continuous variable into its quartiles
+categorize = function (x) {
+  quartiles = summary (x) [c(2, 3, 5)]
+  result = rep ("Q1", length (x))
+  result [which ((quartiles[1] < x) & (x <= quartiles [2]))] = "Q2"
+  result [which ((quartiles[2] < x) & (x <= quartiles [3]))] = "Q3"
+  result [which (quartiles[3] < x)] = "Q4"
+  return (result)
+}
+
+library(ggplot2)
+library(dplyr)
+
+with (latestfifa19,qplot(x=ShotPower,y=Overall,color=Marking)) + geom_smooth(method="lm")
+
+with (latestfifa19,qplot(x=ShotPower,y=Overall,color=categorize(Acceleration))) + geom_smooth(method="lm")
+
+```
+
+The plot above indicates that the relationship between Overall and ShotPower is much steeper for players in the lower quartile of players with low acceleration numbers as opposed to players with high acceleration numbers. 
+
+```{r}
+plot (Overall ~ fit1.int.sbc2$fitted.values, data = latestfifa19)
+abline (0,1)
+```
+
+
+The plot of Overall vs fitted Overall shows a good fit to the model with the data.
+
+# Conclusion
+
+Our final model is; 
+Predicted Overall = $38.5 + 0.0393 * ShotPower + 0.05 * Acceleration - 0.097 * Vision + 0.149 * BallControl + 0.145 * ShortPassing + 0.135 * Composure + 0.0560 * Marking + 0.104 *  HeadingAccuracy + 0.312 * Reactions$
+ 
+This is our final prediction model.To get the model with significant values all the variables except ShortPassing and Reactions variables had to be centered.Note that log transformation was not required on the response variable (Overall).
+
+Based on our eleven interaction effects, we see that we can get a slope for each variable because we are using continuous data. Moreover certain variables such as HeadingAccuracy, ShortPassing, BallControl, Acceleration, Reactions, Vision, Composure and Marking explain the Overall rating much better as we would expect in real life Soccer.
+The final model has adjusted R^2=0.88, which means that 88% of the variation on Overall is explained by the model. The residual standard error is 2.31 Overall.
+
+To illustrate working with the mnodel for prediction, we tried to predict players Overall rating using the variables in the formula above.
+
+
+```{r}
+# Save the predictions and pred. limits for every player in the data frame
+# Converting back to the actual scale
+preds = predict (fit1.int.sbc2, interval='prediction')
+
+latestfifa19$pred.Overall =  (preds [,1])
+latestfifa19$pred.lower =  (preds [,2])
+latestfifa19$pred.upper = (preds [,3])
+latestfifa19 [c(16,33,67,91,202,107,45,217), c("HeadingAccuracy", "ShortPassing", "BallControl", "Acceleration", "Reactions", "Vision","Composure", "Marking", "pred.Overall", "pred.lower", "pred.upper")]
+```
+
+```{r}
+latestfifa19$in.interval = ifelse (latestfifa19$pred.lower <= latestfifa19$Overall & latestfifa19$Overall <= latestfifa19$pred.upper,1,0)
+mean (latestfifa19$in.interval)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
