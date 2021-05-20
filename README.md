@@ -71,11 +71,10 @@ Bachelor of Arts, Luther College, Decorah, IA (August 2017-May 2021)
 
 Below is a link to project files.
 
-https://github.com/Malungisa/Hello-world/blob/8617efadf7434b2fba3d325434d8bf0d5043779a/DS420%20Poster.pdf
 
-https://github.com/Malungisa/Hello-world/blob/095eb417d283334efa19de4ebf8dc0d442e0a32d/Midterm.ipynb
+[HandPosture Poster](https://github.com/Malungisa/Hello-world/blob/8617efadf7434b2fba3d325434d8bf0d5043779a/DS420%20Poster.pdf)
 
-[notebook](https://github.com/Malungisa/Hello-world/blob/095eb417d283334efa19de4ebf8dc0d442e0a32d/Midterm.ipynb)
+[HandPosture notebook](https://github.com/Malungisa/Hello-world/blob/095eb417d283334efa19de4ebf8dc0d442e0a32d/Midterm.ipynb)
 
 ## 6. Fruit Recognition
 
@@ -89,10 +88,9 @@ https://github.com/Malungisa/Hello-world/blob/095eb417d283334efa19de4ebf8dc0d442
 
 Below is a link to project files.
 
-https://github.com/Malungisa/Hello-world/blob/f9037d8a507d982f4e99132418bd7f43d7614ef3/DS420%20Final%20Poster.pdf
+[Fruit Recognition Poster](https://github.com/Malungisa/Hello-world/blob/f9037d8a507d982f4e99132418bd7f43d7614ef3/DS420%20Final%20Poster.pdf)
 
-https://github.com/Malungisa/Hello-world/blob/f9037d8a507d982f4e99132418bd7f43d7614ef3/fruitRecognitionColor.ipynb
-
+[Fruit Recognition notebook](https://github.com/Malungisa/Hello-world/blob/f9037d8a507d982f4e99132418bd7f43d7614ef3/fruitRecognitionColor.ipynb)
 
 ## 5. Simulating Transmission of COVID-19
 
