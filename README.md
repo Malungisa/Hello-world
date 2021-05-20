@@ -82,7 +82,7 @@ Below is a link to project files.
 
 [HandPosture notebook](https://github.com/Malungisa/Hello-world/blob/095eb417d283334efa19de4ebf8dc0d442e0a32d/Midterm.ipynb)
 
-## 6. Fruit Recognition
+## 4. Fruit Recognition
 
 ●	The problem that we attempted to tackle was accurately recognizing fruits based on images, which were taken over a 6 month period. To solve this problem we used a Convolutional Neural Network model. We also created a classical machine learning model for comparison of results
 
