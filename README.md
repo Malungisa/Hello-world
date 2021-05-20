@@ -43,6 +43,12 @@ Bachelor of Arts, Luther College, Decorah, IA (August 2017-May 2021)
 
 ●	Produced results documenting the most significant predictors for a player's overall rating
 
+project files below:
+
+[FIFA19 Report](https://github.com/Malungisa/Hello-world/blob/28fb52148980bde9b82cb06996eb96440b6201c5/Project1.docx)
+
+[FIFA19 Rmd](https://github.com/Malungisa/Hello-world/blob/e465ad0b133b295ce48542c719cd855b6e39c823/Final.Rmd)
+
 ## 2. IMDB Movies Reviews Analysis
 
 ●	Partnered with a class member to analyze a kaggle dataset about IMDB movie reviews
