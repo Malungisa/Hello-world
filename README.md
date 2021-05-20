@@ -31,6 +31,8 @@ Bachelor of Arts, Luther College, Decorah, IA (August 2017-May 2021)
 
 ●	Pi Mu Epsilon, the National Math Honor Society, Member
 
+[This is my Resume](https://github.com/Malungisa/Hello-world/blob/60ea5264c4bf9fd366fc643f40b582c161d2d181/Malungisa%20edited%20May-2021%20Resume.pdf)
+
 # TEAM PROJECTS
 
 ## 1. Predicting Overall Rating of Fifa 19 Players
