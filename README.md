@@ -55,6 +55,8 @@ project files below:
 
 ## 2. IMDB Movies Reviews Analysis
 
+![imdb](https://user-images.githubusercontent.com/73528630/119740695-f52a1d00-be49-11eb-8827-b36826f6f0ab.PNG)
+
 ●	Partnered with a class member to analyze a kaggle dataset about IMDB movie reviews
 
 ●	Utilized data visualization with python using tools like pandas in Watson Studio.
@@ -68,6 +70,8 @@ project files below:
 [IMDB Movies notebook](https://dataplatform.cloud.ibm.com/analytics/notebooks/v2/fe3ff70b-57fe-4e15-ae2a-eea361af488f/view?access_token=bfc3afb8859bd8fd75956858c1284051e6f6c0943d124d3ec0928726f039723f)
 
 ## 3. Classification of Five different hand postures
+
+![handp](https://user-images.githubusercontent.com/73528630/119741126-b6489700-be4a-11eb-9377-65d0ba744cc3.PNG)
 
 ●	Partnered with a two class members to analyze a UCI Machine Learning dataset about Hand Posture Classification. 
 
@@ -92,6 +96,8 @@ Below is a link to project files.
 
 ## 4. Fruit Recognition
 
+![banana](https://user-images.githubusercontent.com/73528630/119741422-4ab2f980-be4b-11eb-942e-1c84868f5200.PNG)
+
 ●	The problem that we attempted to tackle was accurately recognizing fruits based on images, which were taken over a 6 month period. To solve this problem we used a Convolutional Neural Network model. We also created a classical machine learning model for comparison of results
 
 ● The data used for this analysis contained 44,406 images with 15 different fruit labels. images were taken with different poses, number of fruit, same color but different fruit, different color - same category, and different lighting conditions. We also reduced the amount of images by randomly removing images from each category.
@@ -107,6 +113,8 @@ Below is a link to project files.
 [Fruit Recognition notebook](https://github.com/Malungisa/Hello-world/blob/f9037d8a507d982f4e99132418bd7f43d7614ef3/fruitRecognitionColor.ipynb)
 
 ## 5. GlobalSuper Store Data Exploration and Analysis for Recommender System
+
+![tableau](https://user-images.githubusercontent.com/73528630/119742348-35d76580-be4d-11eb-87cf-3468973731c9.PNG)
 
 ●	
 
