@@ -37,7 +37,7 @@ Bachelor of Arts, Luther College, Decorah, IA (August 2017-May 2021)
 
 ## 1. Predicting Overall Rating of Fifa 19 Players
 
-![FIFA 19](https://github.com/Malungisa/Hello-world/blob/4903fd86fefd4e39167f55ab25dded9ce6487910/fifa19.PNG)
+![fifa19](https://user-images.githubusercontent.com/73528630/119740288-4a196380-be49-11eb-920c-979beeaf44c6.PNG)
 
 ●	Collaborated with two group members to make a multiple regression model in R, and use statistical tools for analysis.
 
@@ -63,7 +63,7 @@ project files below:
 
 ●	Communicated results to other students and professors through a formal presentation
 
-![IMDB Movies Poster](https://github.com/Malungisa/Hello-world/blob/9a0fcd1f5fbf43308d2ab494b35a5486c5b71101/IMDB%20Movies%20poster.pdf)
+[IMDB Movies Poster](https://github.com/Malungisa/Hello-world/blob/9a0fcd1f5fbf43308d2ab494b35a5486c5b71101/IMDB%20Movies%20poster.pdf)
 
 [IMDB Movies notebook](https://dataplatform.cloud.ibm.com/analytics/notebooks/v2/fe3ff70b-57fe-4e15-ae2a-eea361af488f/view?access_token=bfc3afb8859bd8fd75956858c1284051e6f6c0943d124d3ec0928726f039723f)
 
