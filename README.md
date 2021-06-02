@@ -1,8 +1,8 @@
 # About Malungisa (Malu)
-I am a luther Colloge graduate with a major in data science and minor in mathematics. I enjoy working on data science projects and anything related to data cleaning, visualization and analysis. I have experience working on excel, python and R but am also interested in learning new and using new tools and languages.
+I am a luther Colloge graduate with a major in data science and minor in mathematics. I enjoy working on data science projects and anything related to data cleaning, visualization and analysis. I have done projects on excel, python and R but am also interested in learning and using new tools and languages.
 
 Reasons for this website:
-- To share projects that I have worked on and currently working on.
+- To share projects that I have worked on and am currently working on.
 
 ![Mndzebele Malungisa2](https://user-images.githubusercontent.com/73528630/103179329-75733480-4850-11eb-9efb-58472a077bcf.JPG)
 
@@ -10,9 +10,14 @@ Reasons for this website:
 ## EDUCATION
 Bachelor of Arts, Luther College, Decorah, IA (August 2017-May 2021)
 
--Major: Data Science   Minor: Mathematics
+   Major: Data Science   Minor: Mathematics
 
--Language Proficiency:  English (fluent), siSwati (native)
+Waterford Kamhlaba United World College UWC (Jan 2015-Nov 2016)
+
+   Diploma: The International Baccalaureate (IB), bilingual diploma
+
+Language Proficiency:  English (fluent), siSwati (native)
+
 
 ## TECHNICAL SKILLS 
 -Languages: Python, JavaScript, CSS, HTML, SQL, R
@@ -59,7 +64,7 @@ project files below:
 
 ●	Partnered with a class member to analyze a kaggle dataset about IMDB movie reviews
 
-●	Utilized data visualization with python using tools like pandas in Watson Studio.
+●	Utilized data visualization with Python using tools like pandas in Watson Studio.
 
 ●	Incorporated model building using; simple and multiple regression and clustering using KNN
 
@@ -102,7 +107,7 @@ Below is a link to project files.
 
 ● The data used for this analysis contained 44,406 images with 15 different fruit labels. images were taken with different poses, number of fruit, same color but different fruit, different color - same category, and different lighting conditions. We also reduced the amount of images by randomly removing images from each category.
 
-● The deep learning model (CNN) 98% performed better than the classical machine learning model (SGD classifier) 77%.
+● The deep learning model (CNN) performed better than the classical machine learning model (SGD classifier) with 98% accuracycompared to 77% accuracy.
 
 ● Little difference in accuracy between color and grayscale.
 
@@ -118,7 +123,7 @@ Below is a link to project files.
 
 ●	Capstone project for Data Science major
 
-●	Used python for data analysis and bulding models, tableau for building dashboard, and R for implementation of recommender system. 
+●	Used Python for data analysis and bulding models, tableau for building dashboard, and R for implementation of recommender system. 
 
 ●	Models for recommender system: Arpiori-algorithm, collaborative filtering.
 
