@@ -116,11 +116,11 @@ Below is a link to project files.
 
 ![tableau](https://user-images.githubusercontent.com/73528630/119742348-35d76580-be4d-11eb-87cf-3468973731c9.PNG)
 
-●	
+●	Capstone project for Data Science major
 
-●	
+●	Used python for data analysis and bulding models, tableau for building dashboard, and R for implementation of recommender system. 
 
-●	
+●	Models for recommender system: Arpiori-algorithm, collaborative filtering.
 
 [GlobalSuper store Poster](https://github.com/Malungisa/Hello-world/blob/f51a9cfa734a3aa54a4478a8e6de736a10f78d5a/Poster.pptx.pdf)
 
