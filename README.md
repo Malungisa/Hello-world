@@ -86,7 +86,7 @@ project files below:
 
 ●	We used SGD classifier and descision tree machine learning algorithms to make predictive models. PCA was applied to reduce number of components.
 
-●	The descision tree produced the best model accuracy with a score od 96%.
+●	The descision tree produced the best model accuracy with a score of 96%.
 
 ●	Models ran after PCA reduction had better performance overall.
 
@@ -107,7 +107,7 @@ Below is a link to project files.
 
 ● The data used for this analysis contained 44,406 images with 15 different fruit labels. images were taken with different poses, number of fruit, same color but different fruit, different color - same category, and different lighting conditions. We also reduced the amount of images by randomly removing images from each category.
 
-● The deep learning model (CNN) performed better than the classical machine learning model (SGD classifier) with 98% accuracycompared to 77% accuracy.
+● The deep learning model (CNN) performed better than the classical machine learning model (SGD classifier) with 98% accuracy rate compared to 77%.
 
 ● Little difference in accuracy between color and grayscale.
 
@@ -125,7 +125,7 @@ Below is a link to project files.
 
 ●	Used Python for data analysis and bulding models, tableau for building dashboard, and R for implementation of recommender system. 
 
-●	Models for recommender system: Arpiori-algorithm, collaborative filtering.
+●	Models for recommender system: Apriori-algorithm, collaborative filtering.
 
 [GlobalSuper store Poster](https://github.com/Malungisa/Hello-world/blob/f51a9cfa734a3aa54a4478a8e6de736a10f78d5a/Poster.pptx.pdf)
 
