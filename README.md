@@ -99,7 +99,7 @@ Below is a link to project files.
 
 [HandPosture notebook](https://github.com/Malungisa/Hello-world/blob/095eb417d283334efa19de4ebf8dc0d442e0a32d/Midterm.ipynb)
 
-## 4. Fruit Recognition Images
+## 4. Fruit Images Recognition 
 
 ![banana](https://user-images.githubusercontent.com/73528630/119741422-4ab2f980-be4b-11eb-942e-1c84868f5200.PNG)
 
