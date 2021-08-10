@@ -36,7 +36,7 @@ Language Proficiency:  English (fluent), siSwati (native)
 
 ●	Pi Mu Epsilon, the National Math Honor Society, Member
 
-[This is my Resume](https://github.com/Malungisa/Hello-world/blob/60ea5264c4bf9fd366fc643f40b582c161d2d181/Malungisa%20edited%20Aug-2021%20Resume.pdf)
+[This is my Resume](https://github.com/Malungisa/Hello-world/blob/b95d79fe3d6fc52bf7b1b916b2063b964022b0c6/Malungisa%20edited%20Aug-2021%20Resume.pdf)
 
 # TEAM PROJECTS
 
